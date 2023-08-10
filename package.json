@@ -1,0 +1,11 @@
+{
+  "name": "csgo-exporter",
+  "version": "1.0.0",
+  "description": "csgo data exporter for prometheus",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "Great 0P",
+  "license": "MIT"
+}
