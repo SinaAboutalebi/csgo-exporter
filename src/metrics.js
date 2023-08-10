@@ -67,6 +67,6 @@ const metrics = {
 };
 
 module.exports = {
-  registries,
+  csgoRegistry,
   metrics,
 };
