@@ -5,13 +5,13 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 const { connect } = require("@unyxos/working-rcon");
 const cors = require('cors');
-const csgo = require('./src/csgo');
+const csgo = require('./src/csgo.js');
 const app = express();
 
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //MiddleWares
 
-app.use(cors({ methods: ["GET", "POST"] }));
+//app.use(cors({ methods: ["GET", "POST"] }));
 
 app.get("/metrics", async (req, res) => {
   const { ip, port, password, game } = req.query;
@@ -23,12 +23,12 @@ app.get("/metrics", async (req, res) => {
     const stats = await client.command("stats");
 
     await client.disconnect();
-    const response = csgo.setMetrics(
+    const response = await csgo.setMetrics(
       { stats, status },
       { ip, port, game }
     );
 
-    res.end(response);
+    res.end(response)
   } catch (err) {
     const response = csgo.setNoMetrics({ ip, port, game });
     res.end(response);
