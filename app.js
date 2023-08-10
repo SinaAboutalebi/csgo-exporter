@@ -4,6 +4,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const { connect } = require("@unyxos/working-rcon");
+const cors = require('cors');
 const csgo = require('./src/csgo');
 const app = express();
 
