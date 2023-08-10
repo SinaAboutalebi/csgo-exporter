@@ -4,7 +4,8 @@
   "description": "csgo data exporter for prometheus",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "Great 0P",
   "license": "MIT",
