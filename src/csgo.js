@@ -1,6 +1,7 @@
-const { csgoRegistry } = require("./metrics.js").registries;
+//---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
+//Packages
 
-const { metrics } = require("./metrics.js");
+const { metrics, csgoRegistry } = require("./metrics.js");
 
 const formatRconResult = function (result) {
   let { stats, status } = result;
@@ -23,6 +24,9 @@ const formatRconResult = function (result) {
     status,
   };
 };
+
+//---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
+//SetMetrics
 
 const setMetrics = function (result, reqInfos) {
   const { stats, status } = formatRconResult(result);
@@ -52,6 +56,9 @@ const setMetrics = function (result, reqInfos) {
   return csgoRegistry.metrics();
 };
 
+//---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
+//SetNoMetric
+
 setNoMetrics = function (reqInfos) {
   const defaultLabels = {
     server: `${reqInfos.ip}:${reqInfos.port}`,
@@ -63,7 +70,8 @@ setNoMetrics = function (reqInfos) {
 
   return csgoRegistry.metrics();
 };
-
+//---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
+//Export Data
 module.exports = {
   setMetrics,
   setNoMetrics,
