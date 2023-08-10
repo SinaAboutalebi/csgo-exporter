@@ -16,7 +16,7 @@ const formatRconResult = function (result) {
   status = {
     hostname: infosArray[0].split(": ").slice(1).join(": "),
     version: infosArray[1].split(": ")[1].split("/")[0],
-    map: infosArray[5].split(": ")[1],
+    map: infosArray[3].split(": ")[1],
   };
 
   return {
