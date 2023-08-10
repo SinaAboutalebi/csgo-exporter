@@ -30,7 +30,7 @@ app.get("/metrics", async (req, res) => {
 
     res.end(response)
   } catch (err) {
-    const response = csgo.setNoMetrics({ ip, port, game });
+    const response = await csgo.setNoMetrics({ ip, port, game });
     res.end(response);
   }
 });
